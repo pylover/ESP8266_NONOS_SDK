@@ -27,7 +27,7 @@ SUBDIRS=    \
 endif # } PDIR
 
 APPDIR = .
-LDDIR = ../ld
+LDDIR = $(SDK_PATH)/ld
 
 CCFLAGS += -Os
 
@@ -49,7 +49,7 @@ COMPONENTS_eagle.app.v6 = \
 	user/libuser.a
 
 LINKFLAGS_eagle.app.v6 = \
-	-L../lib        \
+	-L$(SDK_PATH)/lib        \
 	-nostdlib	\
     -T$(LD_FILE)   \
 	-Wl,--no-check-sections	\
@@ -112,10 +112,11 @@ DDEFINES +=				\
 # Required for each makefile to inherit from the parent
 #
 
+#INCLUDES := $(INCLUDES) -I $(PDIR)include
 INCLUDES := $(INCLUDES) -I $(PDIR)include
-PDIR := ../$(PDIR)
+PDIR = $(SDK_PATH)/
 sinclude $(PDIR)Makefile
 
-.PHONY: FORCE
+.PHONY: FORCE 
 FORCE:
 

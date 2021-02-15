@@ -84,7 +84,7 @@ if [ $TrueCA -eq 1 ];then
 	
 		python make_cert.py
 		rm make_cert.py
-		mv esp_cert_private_key.bin ../bin/
+		mv esp_cert_private_key.bin ${BINDIR}/
 		cd ..
 
 		# set default cert for use in the client
@@ -116,7 +116,7 @@ if [ $TrueCA -eq 1 ];then
 	
 		python make_cert.py
 		rm make_cert.py
-		mv esp_cert_private_key.bin ../bin/
+		mv esp_cert_private_key.bin ${BINDIR}/
 		cd ..
 
 		# set default cert for use in the client
@@ -183,7 +183,7 @@ EOF
 	
 	python make_cert.py
 	rm make_cert.py
-	mv esp_cert_private_key.bin ../bin/
+	mv esp_cert_private_key.bin ${BINDIR}/
 	cd ..
 
 		# set default cert for use in the client
